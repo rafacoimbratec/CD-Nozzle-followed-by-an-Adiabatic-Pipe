@@ -1,0 +1,57 @@
+The GUI_Main.m function (run program here) serves as the graphical user interface (GUI) for visualizing the problem in hands. 
+The primary purpose of this GUI is to allow users to input relevant parameters, validate their entries, and visualize the results through graphical plots.
+The GUI_Fanno_Flow_Nozzle2.m function simulates in an adiabatic nozzle and a connected pipe with friction, determining the flow regime, potential shock locations, and variations in Mach number, temperature, and pressure along the domain. The function visualizes these parameters using plots and provides warnings when no valid solution exists.
+
+#Inputs
+Area Ratio (Ae/At): Ratio of exit area to throat area.
+
+Total Pressure (p0) [Pa]: Stagnation pressure at the inlet.
+
+Total Temperature (T0) [K]: Stagnation temperature at the inlet.
+
+Exit Pressure (pe) [Pa]: Static pressure at the nozzle exit.
+
+Tube Length (m): Length of the adiabatic pipe following the nozzle.
+
+Pipe Roughness (m): Epsilon.
+
+Gamma (γ): Ratio of specific heats for the working gas.
+
+#Usage
+Enter the required input parameters in the provided text fields.
+
+Click the Plot button to compute and display results.
+
+Click Restart to reset inputs and restart the GUI.
+
+Click Exit to close the program.
+
+Click Help to open this help file.
+
+#Major Errors
+If an error occurs related to fzero() or fsolve(), ensure that the MATLAB Optimization Toolbox is installed and activated, as these functions require it. You can check and install it via Command Window: ver('optim')  % Check if the Optimization Toolbox is installed
+If not installed, go to MATLAB Add-Ons > Get Add-Ons > Optimization Toolbox, or use: matlab.addons.install('Optimization_Toolbox')
+
+#Error Messages and Warnings
+
+"Please input different parameters." - This occurs when invalid values (negative or zero) are entered for T0, p0, pe, or gamma.
+
+"Throat area cannot be greater than the exit area. Please input different parameters." - Triggered when AR ≤ 1.
+
+"Model is not valid for the given parameters. Please introduce different inputs." - Displayed when Tube Length > 10,000 m or Friction Factor > 1.
+
+"No flow or inverse flow pe ≥ p0" - Triggered when the exit pressure is greater than or equal to the total pressure.
+
+"The specified Aspect Ratio is too small for accurate computation. Please increase the Aspect Ratio and try again." - Displayed when AR is too low for a valid solution.
+
+"No valid solution for the given inputs. The pipe is experiencing double choking. Please adjust the parameters." - Occurs when both nozzle and pipe experience choking conditions.
+
+"Outside pressure too low, required a new Fanno line. Model is not valid. Please introduce different inputs." - Displayed when the external pressure is too low, leading to an invalid solution.
+
+"Unphysical Mach number calculated. Check input values." - Happens when numerical calculations produce an unrealistic Mach number.
+
+
+#Contact
+For questions or issues, please refer to the code documentation or contact the developer.
+
+End of Help File

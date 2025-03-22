@@ -1,0 +1,12 @@
+Guide to use our GUI:
+
+1 - Choose if you want the analytic solver for Quasi-1D Compressible Steady
+State Flow in a Nozzle or a pipe.
+2 - If you choose the Nozzle case, input the desired pressure ratio (p0/pe),
+exit area ratio (Ae/A*) and the gamma (1.4 for air).
+3 - Click the Plot button to start plotting the Nozzle drawing (Blue lines)
+that will present any shocks present (Red lines) or expansios fans (Green 
+lines)
+4 - If you wish to see the plot for other values you can click the restart 
+button and insert the desired values.
+5 - To end the program just click on the "Exit" button.
